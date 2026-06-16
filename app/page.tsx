@@ -8,9 +8,9 @@ export default function Home() {
   const [refreshDocs, setRefreshDocs] = useState(0);
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div style={{ display: "flex", height: "100vh", overflow: "hidden", background: "var(--bg)" }}>
       <Sidebar onUploadSuccess={() => setRefreshDocs((n) => n + 1)} refreshKey={refreshDocs} />
-      <main className="flex flex-col flex-1 overflow-hidden">
+      <main style={{ flex: 1, overflow: "hidden", display: "flex", flexDirection: "column" }}>
         <ChatPanel />
       </main>
     </div>

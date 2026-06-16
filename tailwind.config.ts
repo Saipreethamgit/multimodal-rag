@@ -9,17 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        surface: "#0f1117",
-        panel:   "#16191f",
-        border:  "#252830",
-        accent:  "#6366f1",
-        "accent-dim": "#4f46e5",
-        muted:   "#6b7280",
-        ink:     "#e5e7eb",
-      },
-      fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        bg:      "#080C14",
+        bg2:     "#0D1117",
+        panel:   "#0D1117",
+        panel2:  "#111620",
+        border:  "#1E2430",
+        border2: "#252D3D",
+        accent:  "#6C8EF5",
+        accent2: "#8B6CF6",
+        green:   "#3DD68C",
+        muted:   "#8B95A8",
+        ink:     "#E2E8F0",
       },
     },
   },
