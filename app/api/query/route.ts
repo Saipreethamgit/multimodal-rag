@@ -46,7 +46,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<QueryResp
     }
 
     // Semantic search
-    const searchResults = await similaritySearch(question, topK);
+    const searchResults = await similaritySearch(question, topK, 0.0);
 
     if (searchResults.length === 0) {
       const noContextAnswer =
