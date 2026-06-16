@@ -30,7 +30,6 @@ export async function POST(request: NextRequest): Promise<NextResponse<UploadRes
     const buffer = Buffer.from(bytes);
 
     const { documentId, chunksCreated } = await ingestBuffer(buffer, file.name, file.type, file.size);
-
     return NextResponse.json({ ok: true, documentId, chunksCreated });
   } catch (err) {
     console.error("[upload] error:", err);
