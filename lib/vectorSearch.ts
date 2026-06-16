@@ -36,13 +36,10 @@ export async function similaritySearch(
       1 - (c.embedding <=> $1::vector) AS similarity
     FROM chunks c
     JOIN documents d ON d.id = c.document_id
-    WHERE 1 - (c.embedding <=> $1::vector) >= $2
     ORDER BY c.embedding <=> $1::vector
-    LIMIT $3
+    LIMIT $2
   `;
-
-  return query<SearchResult>(sql, [vectorLiteral, threshold, topK]);
-}
+  return query<SearchResult>(sql, [vectorLiteral, topK]);}
 
 /**
  * Retrieve chunks by document ID (for context window stuffing).
