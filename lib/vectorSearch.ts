@@ -39,7 +39,10 @@ export async function similaritySearch(
     ORDER BY c.embedding <=> $1::vector
     LIMIT $2
   `;
-  return query<SearchResult>(sql, [vectorLiteral, topK]);}
+  const results = await query<SearchResult>(sql, [vectorLiteral, topK]);
+  console.log("Search results count:", results.length, "for query:", queryText);
+  return results;
+}
 
 /**
  * Retrieve chunks by document ID (for context window stuffing).
